@@ -15,7 +15,7 @@ The script works without requiring RSAT on the remote machine, and avoids proble
 
 ---
 
-## 🚀 Purpose
+## Purpose
 
 The script answers the question:
 
@@ -79,13 +79,13 @@ Example:
 
 ```
 SourceType : Group membership
-SourceName : MTW\Radiotherapy-Admin
-Path       : Administrators -> Local-RT-Admins -> MTW\Radiotherapy-Admin
+SourceName : MYDOM\SalesDept-Admin
+Path       : Administrators -> Local-Admins -> MYDOM\SalesDept-Admin
 ```
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 ### On the machine running the script:
 
@@ -103,12 +103,12 @@ Path       : Administrators -> Local-RT-Admins -> MTW\Radiotherapy-Admin
 
 ---
 
-## 📝 Usage
+## Usage
 
 ```
 .\Get-UserLocalAdminSource.ps1
-Enter the computer name: WSK1175
-Enter the user (samAccountName or UPN, e.g. john.loveland): john.loveland
+Enter the computer name: PC175
+Enter the user (samAccountName or UPN, e.g. john.smith): john.smith
 ```
 
 ### Outputs include:
@@ -119,7 +119,7 @@ Enter the user (samAccountName or UPN, e.g. john.loveland): john.loveland
 
 ---
 
-## ✔ Expected Results
+## Expected Results
 
 ### If the user *is* an admin:
 You get a clear chain of membership showing the exact path.
@@ -137,7 +137,7 @@ All AD groups are fully expanded (direct + nested).
 
 ---
 
-## ⚠ Limitations & Caveats
+## Limitations & Caveats
 
 - **Does not evaluate User Rights Assignment (LUG policies)**  
   e.g., “Allow logon locally”, “Deny logon locally”  
@@ -161,7 +161,7 @@ All AD groups are fully expanded (direct + nested).
 
 ---
 
-## 🧪 Testing Recommendations
+## Testing Recommendations
 
 - Test with a known local admin user to verify detection
 - Test with a deeply nested AD group membership scenario
@@ -173,13 +173,13 @@ All AD groups are fully expanded (direct + nested).
 
 ---
 
-## 📄 License
+## License
 
 MIT License — do whatever you want with it, just don’t blame the author when your domain policies make AD behave like a mood ring.
 
 ---
 
-## 🤝 Contributions
+## Contributions
 
 Pull requests, issues, and improvements are welcome.  
 Especially from anyone dealing with nested-group hell in enterprise AD.
